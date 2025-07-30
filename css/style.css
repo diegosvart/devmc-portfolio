@@ -1,83 +1,79 @@
+/* css/style.css */
+:root {
+    --primary-color: #3B82F6;
+    --secondary-color: #8B5CF6;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f8fafc;
-    color: #0f172a;
 }
 
 .chart-container {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 320px;
-    max-height: 400px;
+    max-width: 350px;
+    margin: 0 auto;
+    aspect-ratio: 1;
 }
 
-@media (min-width: 768px) {
-    .chart-container {
-        height: 380px;
-    }
+#skillsChart {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 350px;
+    max-height: 350px;
 }
 
-.kpi-card {
-    background-color: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
-    border: 1px solid #e2e8f0;
-}
-
-.flow-item {
+/* Estilos para la sección de skills */
+#skills .bg-white {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    padding-bottom: 3rem;
+    min-height: 500px;
 }
 
-.flow-item:not(:last-child)::after {
-    content: '▼';
-    position: absolute;
-    bottom: 1rem;
-    font-size: 1.5rem;
-    color: #94a3b8;
+#skills .grid.grid-cols-2 {
+    flex: 1;
+    align-content: center;
 }
 
-/* Accordion Styles */
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.accordion-item.active .accordion-content {
-    max-height: 800px;
-    /* Increased height for more content */
+.card-hover {
+    transition: all 0.3s ease;
 }
 
-.accordion-toggle .icon-plus {
-    display: block;
-    transition: transform 0.3s ease;
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-.accordion-toggle .icon-minus {
-    display: none;
-    transition: transform 0.3s ease;
-}
-
-.accordion-item.active .accordion-toggle .icon-plus {
-    display: none;
-}
-
-.accordion-item.active .accordion-toggle .icon-minus {
-    display: block;
-}
-
-.tech-detail {
-    border-left: 3px solid #e2e8f0;
-    padding-left: 1rem;
-    margin-top: 1rem;
+@media (max-width: 768px) {
+    .text-5xl {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .chart-container {
+        max-width: 280px;
+    }
+    
+    #skillsChart {
+        max-width: 280px;
+        max-height: 280px;
+    }
+    
+    #skills .bg-white {
+        min-height: auto;
+    }
 }

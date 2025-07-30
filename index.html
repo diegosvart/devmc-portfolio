@@ -1,187 +1,226 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografía: Anatomía de un Ingeniero Full-Stack</title>
+    <title>Mi Portafolio Full-Stack</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Desarrollador Full-Stack especializado en React, Node.js, Python y cloud computing. Portafolio con proyectos live.">
+    <meta name="keywords" content="desarrollador, full-stack, react, nodejs, python, aws, portfolio">
+    <meta name="author" content="Diego Svart">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mi Portafolio Full-Stack">
+    <meta property="og:description" content="Desarrollador especializado en tecnologías modernas y arquitecturas escalables">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://diegosvart.dev">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mi Portafolio Full-Stack">
+    <meta name="twitter:description" content="Desarrollador especializado en tecnologías modernas">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js"></script>
 </head>
 
-<body class="antialiased">
-
-    <!-- Hero Section -->
-    <header class="bg-slate-900 text-white text-center py-20 px-4">
-        <h1 class="text-4xl md:text-6xl font-black tracking-tight">Anatomía de un Ingeniero Full-Stack</h1>
-        <p class="max-w-3xl mx-auto mt-4 text-lg md:text-xl text-slate-300">Un viaje visual a través de las capas de
-            tecnología que definen el desarrollo de software moderno, desde la interfaz de usuario hasta la nube.</p>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-800">Mi Portafolio</h1>
+                <div class="space-x-6">
+                    <a href="#about" class="text-gray-600 hover:text-blue-600">Sobre Mí</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600">Proyectos</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600">Contacto</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main class="container mx-auto p-4 md:p-8">
-
-        <!-- KPIs Section -->
-        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mb-16 -mt-16">
-            <div class="kpi-card">
-                <span class="text-5xl font-black text-sky-500">6</span>
-                <h3 class="mt-2 text-xl font-bold text-slate-800">Capas de Expertise</h3>
-                <p class="text-slate-500 mt-1">Desde el frontend hasta el despliegue.</p>
-            </div>
-            <div class="kpi-card">
-                <span class="text-5xl font-black text-amber-500">30+</span>
-                <h3 class="mt-2 text-xl font-bold text-slate-800">Tecnologías Clave</h3>
-                <p class="text-slate-500 mt-1">Un ecosistema de herramientas interconectadas.</p>
-            </div>
-            <div class="kpi-card">
-                <span class="text-5xl font-black text-emerald-500">100%</span>
-                <h3 class="mt-2 text-xl font-bold text-slate-800">Adaptabilidad</h3>
-                <p class="text-slate-500 mt-1">La habilidad de construir soluciones completas.</p>
-            </div>
-        </section>
-
-        <!-- Flowchart Section -->
-        <section class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-2">El Ecosistema Completo</h2>
-            <p class="text-lg text-slate-600 text-center mb-12 max-w-2xl mx-auto">Las capas no son silos; son un flujo
-                continuo de tecnología que juntas, crean una aplicación funcional y escalable.</p>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
-                    <div class="flow-item"><span class="text-4xl mb-2">🎨</span>
-                        <h4 class="font-bold">Frontend</h4>
-                    </div>
-                    <div class="flow-item"><span class="text-4xl mb-2">⚙️</span>
-                        <h4 class="font-bold">Backend</h4>
-                    </div>
-                    <div class="flow-item"><span class="text-4xl mb-2">🗃️</span>
-                        <h4 class="font-bold">Bases de Datos</h4>
-                    </div>
-                    <div class="flow-item"><span class="text-4xl mb-2">📦</span>
-                        <h4 class="font-bold">Contenedores</h4>
-                    </div>
-                    <div class="flow-item"><span class="text-4xl mb-2">☁️</span>
-                        <h4 class="font-bold">Cloud</h4>
-                    </div>
-                    <div class="flow-item"><span class="text-4xl mb-2">🔄</span>
-                        <h4 class="font-bold">CI/CD</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tech Layers Section -->
-        <div class="space-y-16">
-            <!-- Layer 1: Frontend -->
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <h2 class="text-3xl font-bold text-slate-800">🎨 Capa 1: Frontend</h2>
-                    <p class="mt-4 text-lg text-slate-600">Es la cara visible de la aplicación, donde la experiencia de
-                        usuario cobra vida. La elección del framework define la velocidad, interactividad y
-                        escalabilidad de la interfaz.</p>
-                    <p class="mt-4 text-slate-600">El gráfico muestra la distribución de popularidad entre los tres
-                        gigantes del frontend. React mantiene un claro liderazgo por su flexibilidad, mientras que
-                        Angular es una opción robusta para sistemas empresariales complejos y Vue destaca por su
-                        simplicidad.</p>
-                </div>
-                <div class="order-1 md:order-2">
-                    <div class="chart-container">
-                        <canvas id="frontendChart"></canvas>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Layer 2: Backend -->
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <div class="chart-container">
-                        <canvas id="backendChart"></canvas>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-800">⚙️ Capa 2: Backend</h2>
-                    <p class="mt-4 text-lg text-slate-600">El motor de la aplicación. Aquí reside la lógica de negocio,
-                        el procesamiento de datos y la comunicación con la base de datos.</p>
-                    <p class="mt-4 text-slate-600">La popularidad de Node.js se debe a su capacidad para usar JavaScript
-                        en ambos extremos, unificando el stack. Python es preferido por su rapidez de desarrollo y su
-                        potencia en data science, mientras que Java y .NET son pilares en el mundo corporativo por su
-                        rendimiento y seguridad.</p>
-                </div>
-            </section>
-
-            <!-- Layer 3: Databases -->
-            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <h2 class="text-3xl font-bold text-slate-800">🗃️ Capa 3: Bases de Datos</h2>
-                    <p class="mt-4 text-lg text-slate-600">El cerebro de la aplicación, responsable de almacenar y
-                        recuperar la información de manera eficiente y segura.</p>
-                    <p class="mt-4 text-slate-600">Las bases de datos relacionales (SQL) como PostgreSQL son la columna
-                        vertebral para datos estructurados. Las NoSQL como MongoDB ofrecen flexibilidad para datos no
-                        estructurados o semi-estructurados, una necesidad creciente en aplicaciones modernas.</p>
-                </div>
-                <div class="order-1 md:order-2">
-                    <div class="chart-container">
-                        <canvas id="databaseChart"></canvas>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Layers 4, 5, 6 -->
-            <section>
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-slate-800">📦☁️🔄 Capas 4, 5 y 6: Infraestructura y
-                        Automatización</h2>
-                    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Estas capas aseguran que la aplicación se
-                        pueda construir, desplegar y escalar de manera confiable y automatizada.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="kpi-card">
-                        <h4 class="text-xl font-bold text-slate-800">Contenedores</h4>
-                        <p class="text-6xl my-4">📦</p>
-                        <p class="text-slate-600"><strong class="text-slate-900">Docker</strong> empaqueta la
-                            aplicación, mientras que <strong class="text-slate-900">Kubernetes</strong> la orquesta,
-                            permitiendo una escalabilidad sin precedentes.</p>
-                    </div>
-                    <div class="kpi-card">
-                        <h4 class="text-xl font-bold text-slate-800">Cloud</h4>
-                        <div class="chart-container h-64 !max-h-64 mt-4">
-                            <canvas id="cloudChart"></canvas>
-                        </div>
-                        <p class="text-slate-600 mt-4">AWS, Azure y GCP dominan el mercado, ofreciendo la
-                            infraestructura global para ejecutar cualquier aplicación.</p>
-                    </div>
-                    <div class="kpi-card">
-                        <h4 class="text-xl font-bold text-slate-800">CI/CD</h4>
-                        <p class="text-6xl my-4">🔄</p>
-                        <p class="text-slate-600">Herramientas como <strong class="text-slate-900">GitHub
-                                Actions</strong> automatizan el ciclo de vida del software, desde el código hasta la
-                            producción.</p>
-                    </div>
-                </div>
-            </section>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold mb-4">Desarrollador Full-Stack</h2>
+            <p class="text-xl mb-8">Especializado en tecnologías modernas y arquitecturas escalables</p>
+            <a href="#projects" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                Ver Proyectos
+            </a>
         </div>
+    </section>
 
-        <!-- Accordion Section -->
-        <section class="mt-20">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-800">Expertise en Detalle</h2>
-                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Explora las tecnologías específicas que
-                    componen cada capa del stack de un ingeniero Full-Stack.</p>
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12">Sobre Mí</h3>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg text-gray-600 mb-6">
+                    Soy un desarrollador full-stack con experiencia en tecnologías modernas como React, Node.js, 
+                    Python, y cloud computing. Me especializo en crear soluciones escalables y eficientes.
+                </p>
+                <p class="text-lg text-gray-600">
+                    Este portafolio demuestra mi experiencia práctica a través de proyectos reales desplegados 
+                    en diferentes plataformas cloud.
+                </p>
             </div>
-            <div id="accordion" class="space-y-4 max-w-4xl mx-auto">
-                <!-- Accordion items will be injected here by JS -->
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12">Proyectos Live</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Proyecto 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h4 class="text-xl font-bold mb-4">Modern Web Stack</h4>
+                    <p class="text-gray-600 mb-4">E-commerce con React + Node.js + Golang</p>
+                    <div class="space-y-2 text-sm text-gray-500 mb-6">
+                        <div>🎨 React + TypeScript</div>
+                        <div>⚙️ Node.js + Golang</div>
+                        <div>🗃️ MongoDB + Redis</div>
+                        <div>☁️ AWS ECS</div>
+                    </div>
+                    <div class="space-y-2">
+                        <button class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                            🚧 En Desarrollo
+                        </button>
+                        <a href="#" class="block w-full bg-gray-200 text-gray-600 px-4 py-2 rounded text-center">
+                            Ver Código 📁
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">🔥</div>
+                    <h4 class="text-xl font-bold mb-4">Enterprise Stack</h4>
+                    <p class="text-gray-600 mb-4">Dashboard Analytics con Angular + Python</p>
+                    <div class="space-y-2 text-sm text-gray-500 mb-6">
+                        <div>🎨 Angular + TypeScript</div>
+                        <div>⚙️ Python + FastAPI</div>
+                        <div>🗃️ PostgreSQL + Redis</div>
+                        <div>☁️ Azure AKS</div>
+                    </div>
+                    <div class="space-y-2">
+                        <button class="w-full bg-gray-400 text-white px-4 py-2 rounded">
+                            📅 Próximamente
+                        </button>
+                        <a href="#" class="block w-full bg-gray-200 text-gray-600 px-4 py-2 rounded text-center">
+                            Ver Código 📁
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h4 class="text-xl font-bold mb-4">Versatile Stack</h4>
+                    <p class="text-gray-600 mb-4">Social Platform con Vue.js + Java + Mobile</p>
+                    <div class="space-y-2 text-sm text-gray-500 mb-6">
+                        <div>🎨 Vue.js + Vuetify</div>
+                        <div>📱 Ionic + Capacitor</div>
+                        <div>⚙️ Java + Spring Boot</div>
+                        <div>☁️ Google Cloud</div>
+                    </div>
+                    <div class="space-y-2">
+                        <button class="w-full bg-gray-400 text-white px-4 py-2 rounded">
+                            📅 Próximamente
+                        </button>
+                        <a href="#" class="block w-full bg-gray-200 text-gray-600 px-4 py-2 rounded text-center">
+                            Ver Código 📁
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12">Tecnologías</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Capas de Expertise -->
+                <div class="bg-white rounded-lg shadow-lg p-8 h-full">
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-black text-sky-500">6</span>
+                        <h4 class="mt-2 text-xl font-bold text-slate-800">Capas de Expertise</h4>
+                        <p class="text-slate-500 mt-1">Desde el frontend hasta el despliegue.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="skillsChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Stack Tecnológico -->
+                <div class="bg-white rounded-lg shadow-lg p-8 h-full">
+                    <div class="text-center mb-8">
+                        <span class="text-5xl font-black text-amber-500">30+</span>
+                        <h4 class="mt-2 text-xl font-bold text-slate-800">Stack Tecnológico</h4>
+                        <p class="text-slate-500 mt-1">Herramientas y frameworks principales.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">⚛️</div>
+                            <div class="font-semibold">React</div>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">🟢</div>
+                            <div class="font-semibold">Node.js</div>
+                        </div>
+                        <div class="bg-red-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">🅰️</div>
+                            <div class="font-semibold">Angular</div>
+                        </div>
+                        <div class="bg-yellow-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">🐍</div>
+                            <div class="font-semibold">Python</div>
+                        </div>
+                        <div class="bg-purple-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">🟣</div>
+                            <div class="font-semibold">Vue.js</div>
+                        </div>
+                        <div class="bg-orange-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">☕</div>
+                            <div class="font-semibold">Java</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="text-center py-8 mt-16 bg-slate-900 text-slate-400">
-        <p>Infografía generada para visualizar el stack tecnológico de un Ingeniero Full-Stack.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold mb-8">Contacto</h3>
+            <p class="text-lg text-gray-600 mb-8">¿Interesado en trabajar juntos? ¡Hablemos!</p>
+            <div class="space-x-4">
+                <a href="mailto:diego@diegosvart.dev" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                    📧 Email
+                </a>
+                <a href="https://linkedin.com/in/diegosvart" class="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition">
+                    💼 LinkedIn
+                </a>
+                <a href="https://github.com/diegosvart" class="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition">
+                    💻 GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <p>&copy; 2025 Mi Portafolio Full-Stack. Construido con ❤️ y desplegado en AWS.</p>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
-
 </html>
