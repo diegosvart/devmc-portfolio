@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Anatomía de un Ingeniero Full-Stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header class="bg-slate-900 text-white text-center py-20 px-4">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight">Anatomía de un Ingeniero Full-Stack</h1>
+        <p class="max-w-3xl mx-auto mt-4 text-lg md:text-xl text-slate-300">Un viaje visual a través de las capas de
+            tecnología que definen el desarrollo de software moderno, desde la interfaz de usuario hasta la nube.</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- KPIs Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mb-16 -mt-16">
+            <div class="kpi-card">
+                <span class="text-5xl font-black text-sky-500">6</span>
+                <h3 class="mt-2 text-xl font-bold text-slate-800">Capas de Expertise</h3>
+                <p class="text-slate-500 mt-1">Desde el frontend hasta el despliegue.</p>
+            </div>
+            <div class="kpi-card">
+                <span class="text-5xl font-black text-amber-500">30+</span>
+                <h3 class="mt-2 text-xl font-bold text-slate-800">Tecnologías Clave</h3>
+                <p class="text-slate-500 mt-1">Un ecosistema de herramientas interconectadas.</p>
+            </div>
+            <div class="kpi-card">
+                <span class="text-5xl font-black text-emerald-500">100%</span>
+                <h3 class="mt-2 text-xl font-bold text-slate-800">Adaptabilidad</h3>
+                <p class="text-slate-500 mt-1">La habilidad de construir soluciones completas.</p>
+            </div>
+        </section>
+
+        <!-- Flowchart Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-2">El Ecosistema Completo</h2>
+            <p class="text-lg text-slate-600 text-center mb-12 max-w-2xl mx-auto">Las capas no son silos; son un flujo
+                continuo de tecnología que juntas, crean una aplicación funcional y escalable.</p>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                    <div class="flow-item"><span class="text-4xl mb-2">🎨</span>
+                        <h4 class="font-bold">Frontend</h4>
+                    </div>
+                    <div class="flow-item"><span class="text-4xl mb-2">⚙️</span>
+                        <h4 class="font-bold">Backend</h4>
+                    </div>
+                    <div class="flow-item"><span class="text-4xl mb-2">🗃️</span>
+                        <h4 class="font-bold">Bases de Datos</h4>
+                    </div>
+                    <div class="flow-item"><span class="text-4xl mb-2">📦</span>
+                        <h4 class="font-bold">Contenedores</h4>
+                    </div>
+                    <div class="flow-item"><span class="text-4xl mb-2">☁️</span>
+                        <h4 class="font-bold">Cloud</h4>
+                    </div>
+                    <div class="flow-item"><span class="text-4xl mb-2">🔄</span>
+                        <h4 class="font-bold">CI/CD</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Layers Section -->
+        <div class="space-y-16">
+            <!-- Layer 1: Frontend -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl font-bold text-slate-800">🎨 Capa 1: Frontend</h2>
+                    <p class="mt-4 text-lg text-slate-600">Es la cara visible de la aplicación, donde la experiencia de
+                        usuario cobra vida. La elección del framework define la velocidad, interactividad y
+                        escalabilidad de la interfaz.</p>
+                    <p class="mt-4 text-slate-600">El gráfico muestra la distribución de popularidad entre los tres
+                        gigantes del frontend. React mantiene un claro liderazgo por su flexibilidad, mientras que
+                        Angular es una opción robusta para sistemas empresariales complejos y Vue destaca por su
+                        simplicidad.</p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="chart-container">
+                        <canvas id="frontendChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Layer 2: Backend -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="chart-container">
+                        <canvas id="backendChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-800">⚙️ Capa 2: Backend</h2>
+                    <p class="mt-4 text-lg text-slate-600">El motor de la aplicación. Aquí reside la lógica de negocio,
+                        el procesamiento de datos y la comunicación con la base de datos.</p>
+                    <p class="mt-4 text-slate-600">La popularidad de Node.js se debe a su capacidad para usar JavaScript
+                        en ambos extremos, unificando el stack. Python es preferido por su rapidez de desarrollo y su
+                        potencia en data science, mientras que Java y .NET son pilares en el mundo corporativo por su
+                        rendimiento y seguridad.</p>
+                </div>
+            </section>
+
+            <!-- Layer 3: Databases -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl font-bold text-slate-800">🗃️ Capa 3: Bases de Datos</h2>
+                    <p class="mt-4 text-lg text-slate-600">El cerebro de la aplicación, responsable de almacenar y
+                        recuperar la información de manera eficiente y segura.</p>
+                    <p class="mt-4 text-slate-600">Las bases de datos relacionales (SQL) como PostgreSQL son la columna
+                        vertebral para datos estructurados. Las NoSQL como MongoDB ofrecen flexibilidad para datos no
+                        estructurados o semi-estructurados, una necesidad creciente en aplicaciones modernas.</p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="chart-container">
+                        <canvas id="databaseChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Layers 4, 5, 6 -->
+            <section>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-800">📦☁️🔄 Capas 4, 5 y 6: Infraestructura y
+                        Automatización</h2>
+                    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Estas capas aseguran que la aplicación se
+                        pueda construir, desplegar y escalar de manera confiable y automatizada.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="kpi-card">
+                        <h4 class="text-xl font-bold text-slate-800">Contenedores</h4>
+                        <p class="text-6xl my-4">📦</p>
+                        <p class="text-slate-600"><strong class="text-slate-900">Docker</strong> empaqueta la
+                            aplicación, mientras que <strong class="text-slate-900">Kubernetes</strong> la orquesta,
+                            permitiendo una escalabilidad sin precedentes.</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h4 class="text-xl font-bold text-slate-800">Cloud</h4>
+                        <div class="chart-container h-64 !max-h-64 mt-4">
+                            <canvas id="cloudChart"></canvas>
+                        </div>
+                        <p class="text-slate-600 mt-4">AWS, Azure y GCP dominan el mercado, ofreciendo la
+                            infraestructura global para ejecutar cualquier aplicación.</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h4 class="text-xl font-bold text-slate-800">CI/CD</h4>
+                        <p class="text-6xl my-4">🔄</p>
+                        <p class="text-slate-600">Herramientas como <strong class="text-slate-900">GitHub
+                                Actions</strong> automatizan el ciclo de vida del software, desde el código hasta la
+                            producción.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Accordion Section -->
+        <section class="mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Expertise en Detalle</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Explora las tecnologías específicas que
+                    componen cada capa del stack de un ingeniero Full-Stack.</p>
+            </div>
+            <div id="accordion" class="space-y-4 max-w-4xl mx-auto">
+                <!-- Accordion items will be injected here by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 mt-16 bg-slate-900 text-slate-400">
+        <p>Infografía generada para visualizar el stack tecnológico de un Ingeniero Full-Stack.</p>
+    </footer>
+
+</body>
+
+</html>

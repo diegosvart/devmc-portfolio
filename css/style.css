@@ -1,0 +1,83 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 320px;
+    max-height: 400px;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        height: 380px;
+    }
+}
+
+.kpi-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.flow-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.flow-item:not(:last-child)::after {
+    content: '▼';
+    position: absolute;
+    bottom: 1rem;
+    font-size: 1.5rem;
+    color: #94a3b8;
+}
+
+/* Accordion Styles */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 800px;
+    /* Increased height for more content */
+}
+
+.accordion-toggle .icon-plus {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.accordion-toggle .icon-minus {
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-toggle .icon-plus {
+    display: none;
+}
+
+.accordion-item.active .accordion-toggle .icon-minus {
+    display: block;
+}
+
+.tech-detail {
+    border-left: 3px solid #e2e8f0;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}

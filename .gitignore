@@ -1,0 +1,28 @@
+# Crear .gitignore
+@"
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*~
+
+# Archives
+*.zip
+*.tar.gz
+
+# Project specific
+bucket-policy.json
+"@ | Out-File -FilePath ".gitignore" -Encoding UTF8
