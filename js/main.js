@@ -1,33 +1,60 @@
 // js/main.js
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling para navegación
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 
-    // Verificar que Chart.js esté disponible
-    if (typeof Chart === 'undefined') {
-        console.error('Chart.js no está cargado');
-        return;
+// Dark Mode Toggle
+function initDarkMode() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    
+    // Check for saved dark mode preference or default to light mode
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
     }
+    
+    darkModeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        
+        // Save preference
+        if (document.documentElement.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+        
+        // Update chart colors if needed
+        updateChartColors();
+    });
+}
 
-    // Buscar el canvas
+// Update chart colors based on theme
+function updateChartColors() {
+    if (skillsChart) {
+        const isDark = document.documentElement.classList.contains('dark');
+        
+        skillsChart.data.datasets[0].borderColor = isDark ? '#374151' : '#ffffff';
+        skillsChart.options.plugins.tooltip.backgroundColor = isDark ? '#374151' : 'rgba(0, 0, 0, 0.8)';
+        skillsChart.options.plugins.tooltip.titleColor = '#ffffff';
+        skillsChart.options.plugins.tooltip.bodyColor = isDark ? '#d1d5db' : '#ffffff';
+        
+        skillsChart.update();
+    }
+}
+
+// Chart.js configuration
+let skillsChart;
+
+function initChart() {
     const canvas = document.getElementById('skillsChart');
     if (!canvas) {
         console.error('Canvas skillsChart no encontrado');
         return;
     }
 
-    // Chart de Skills - 6 Capas del Stack Full-Stack
     const ctx = canvas.getContext('2d');
     
     try {
-        const chart = new Chart(ctx, {
+        skillsChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
                 labels: [
@@ -39,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     '🔄 CI/CD'
                 ],
                 datasets: [{
-                    data: [30, 28, 18, 12, 8, 4], // Valores ajustados basados en experiencia
+                    data: [30, 28, 18, 12, 8, 4],
                     backgroundColor: [
                         '#3B82F6', // blue
                         '#10B981', // green
@@ -49,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         '#06B6D4'  // cyan
                     ],
                     borderWidth: 3,
-                    borderColor: '#ffffff',
+                    borderColor: document.documentElement.classList.contains('dark') ? '#374151' : '#ffffff',
                     hoverOffset: 8
                 }]
             },
@@ -58,36 +85,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'bottom',
-                        labels: {
-                            padding: 15,
-                            usePointStyle: true,
-                            generateLabels: function(chart) {
-                                const data = chart.data;
-                                if (data.labels.length && data.datasets.length) {
-                                    return data.labels.map((label, i) => {
-                                        const dataset = data.datasets[0];
-                                        return {
-                                            text: label,
-                                            fillStyle: dataset.backgroundColor[i],
-                                            strokeStyle: dataset.borderColor,
-                                            lineWidth: dataset.borderWidth,
-                                            pointStyle: 'circle',
-                                            hidden: false,
-                                            index: i
-                                        };
-                                    });
-                                }
-                                return [];
-                            }
-                        }
+                        display: false
                     },
                     tooltip: {
-                        backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                        backgroundColor: document.documentElement.classList.contains('dark') ? '#374151' : 'rgba(0, 0, 0, 0.8)',
                         titleColor: '#ffffff',
-                        bodyColor: '#ffffff',
-                        borderColor: '#ffffff',
+                        bodyColor: document.documentElement.classList.contains('dark') ? '#d1d5db' : '#ffffff',
+                        borderColor: '#3B82F6',
                         borderWidth: 1,
+                        cornerRadius: 8,
                         displayColors: false,
                         callbacks: {
                             title: function(tooltipItems) {
@@ -138,6 +144,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
                         }
                     }
+                },
+                cutout: '60%',
+                animation: {
+                    animateRotate: true,
+                    duration: 2000
                 }
             }
         });
@@ -145,8 +156,26 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (error) {
         console.error('Error al crear el chart:', error);
     }
+}
 
-    // Animaciones al hacer scroll
+// Smooth scrolling for navigation links
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Animaciones al hacer scroll
+function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -168,4 +197,12 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(section);
     });
+}
+
+// Initialize everything when DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+    initDarkMode();
+    initChart();
+    initSmoothScrolling();
+    initScrollAnimations();
 });

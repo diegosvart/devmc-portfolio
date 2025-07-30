@@ -22,21 +22,46 @@
     <meta name="twitter:description" content="Desarrollador especializado en tecnologías modernas">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            text: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
     <!-- Header -->
-    <header class="bg-white shadow-lg">
+    <header class="bg-white dark:bg-gray-900 shadow-lg transition-colors duration-300">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-800">Mi Portafolio</h1>
-                <div class="space-x-6">
-                    <a href="#about" class="text-gray-600 hover:text-blue-600">Sobre Mí</a>
-                    <a href="#projects" class="text-gray-600 hover:text-blue-600">Proyectos</a>
-                    <a href="#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
-                    <a href="#contact" class="text-gray-600 hover:text-blue-600">Contacto</a>
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Mi Portafolio</h1>
+                <div class="flex items-center space-x-6">
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Sobre Mí</a>
+                    <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Proyectos</a>
+                    <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Contacto</a>
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">
+                        <svg id="sunIcon" class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="moonIcon" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -54,15 +79,15 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16">
+    <section id="about" class="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
         <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center mb-12">Sobre Mí</h3>
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Sobre Mí</h3>
             <div class="max-w-3xl mx-auto text-center">
-                <p class="text-lg text-gray-600 mb-6">
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
                     Soy un desarrollador full-stack con experiencia en tecnologías modernas como React, Node.js, 
                     Python, y cloud computing. Me especializo en crear soluciones escalables y eficientes.
                 </p>
-                <p class="text-lg text-gray-600">
+                <p class="text-lg text-gray-600 dark:text-gray-300">
                     Este portafolio demuestra mi experiencia práctica a través de proyectos reales desplegados 
                     en diferentes plataformas cloud.
                 </p>
@@ -71,17 +96,17 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-100">
+    <section id="projects" class="py-16 bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
         <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center mb-12">Proyectos Live</h3>
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Proyectos Live</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <!-- Proyecto 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300">
                     <div class="text-4xl mb-4">🚀</div>
-                    <h4 class="text-xl font-bold mb-4">Modern Web Stack</h4>
-                    <p class="text-gray-600 mb-4">E-commerce con React + Node.js + Golang</p>
-                    <div class="space-y-2 text-sm text-gray-500 mb-6">
+                    <h4 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Modern Web Stack</h4>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">E-commerce con React + Node.js + Golang</p>
+                    <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
                         <div>🎨 React + TypeScript</div>
                         <div>⚙️ Node.js + Golang</div>
                         <div>🗃️ MongoDB + Redis</div>
@@ -91,18 +116,18 @@
                         <button class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
                             🚧 En Desarrollo
                         </button>
-                        <a href="#" class="block w-full bg-gray-200 text-gray-600 px-4 py-2 rounded text-center">
+                        <a href="#" class="block w-full bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-300 px-4 py-2 rounded text-center hover:bg-gray-300 dark:hover:bg-gray-500 transition">
                             Ver Código 📁
                         </a>
                     </div>
                 </div>
 
                 <!-- Proyecto 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300">
                     <div class="text-4xl mb-4">🔥</div>
-                    <h4 class="text-xl font-bold mb-4">Enterprise Stack</h4>
-                    <p class="text-gray-600 mb-4">Dashboard Analytics con Angular + Python</p>
-                    <div class="space-y-2 text-sm text-gray-500 mb-6">
+                    <h4 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Enterprise Stack</h4>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Dashboard Analytics con Angular + Python</p>
+                    <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
                         <div>🎨 Angular + TypeScript</div>
                         <div>⚙️ Python + FastAPI</div>
                         <div>🗃️ PostgreSQL + Redis</div>
@@ -112,18 +137,18 @@
                         <button class="w-full bg-gray-400 text-white px-4 py-2 rounded">
                             📅 Próximamente
                         </button>
-                        <a href="#" class="block w-full bg-gray-200 text-gray-600 px-4 py-2 rounded text-center">
+                        <a href="#" class="block w-full bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-300 px-4 py-2 rounded text-center hover:bg-gray-300 dark:hover:bg-gray-500 transition">
                             Ver Código 📁
                         </a>
                     </div>
                 </div>
 
                 <!-- Proyecto 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300">
                     <div class="text-4xl mb-4">⚡</div>
-                    <h4 class="text-xl font-bold mb-4">Versatile Stack</h4>
-                    <p class="text-gray-600 mb-4">Social Platform con Vue.js + Java + Mobile</p>
-                    <div class="space-y-2 text-sm text-gray-500 mb-6">
+                    <h4 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Versatile Stack</h4>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Social Platform con Vue.js + Java + Mobile</p>
+                    <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400 mb-6">
                         <div>🎨 Vue.js + Vuetify</div>
                         <div>📱 Ionic + Capacitor</div>
                         <div>⚙️ Java + Spring Boot</div>
@@ -133,7 +158,7 @@
                         <button class="w-full bg-gray-400 text-white px-4 py-2 rounded">
                             📅 Próximamente
                         </button>
-                        <a href="#" class="block w-full bg-gray-200 text-gray-600 px-4 py-2 rounded text-center">
+                        <a href="#" class="block w-full bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-300 px-4 py-2 rounded text-center hover:bg-gray-300 dark:hover:bg-gray-500 transition">
                             Ver Código 📁
                         </a>
                     </div>
@@ -143,16 +168,16 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-16">
+    <section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
         <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center mb-12">Tecnologías</h3>
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Tecnologías</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Capas de Expertise -->
-                <div class="bg-white rounded-lg shadow-lg p-8 h-full">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 h-full transition-colors duration-300">
                     <div class="text-center mb-8">
                         <span class="text-5xl font-black text-sky-500">6</span>
-                        <h4 class="mt-2 text-xl font-bold text-slate-800">Capas de Expertise</h4>
-                        <p class="text-slate-500 mt-1">Desde el frontend hasta el despliegue.</p>
+                        <h4 class="mt-2 text-xl font-bold text-slate-800 dark:text-white">Capas de Expertise</h4>
+                        <p class="text-slate-500 dark:text-gray-400 mt-1">Desde el frontend hasta el despliegue.</p>
                     </div>
                     <div class="chart-container">
                         <canvas id="skillsChart" width="400" height="400"></canvas>
@@ -160,36 +185,36 @@
                 </div>
                 
                 <!-- Stack Tecnológico -->
-                <div class="bg-white rounded-lg shadow-lg p-8 h-full">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 h-full transition-colors duration-300">
                     <div class="text-center mb-8">
                         <span class="text-5xl font-black text-amber-500">30+</span>
-                        <h4 class="mt-2 text-xl font-bold text-slate-800">Stack Tecnológico</h4>
-                        <p class="text-slate-500 mt-1">Herramientas y frameworks principales.</p>
+                        <h4 class="mt-2 text-xl font-bold text-slate-800 dark:text-white">Stack Tecnológico</h4>
+                        <p class="text-slate-500 dark:text-gray-400 mt-1">Herramientas y frameworks principales.</p>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-blue-100 p-4 rounded-lg text-center">
+                        <div class="bg-blue-100 dark:bg-blue-900/30 p-4 rounded-lg text-center transition-colors duration-300">
                             <div class="text-2xl mb-2">⚛️</div>
-                            <div class="font-semibold">React</div>
+                            <div class="font-semibold text-gray-800 dark:text-white">React</div>
                         </div>
-                        <div class="bg-green-100 p-4 rounded-lg text-center">
+                        <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg text-center transition-colors duration-300">
                             <div class="text-2xl mb-2">🟢</div>
-                            <div class="font-semibold">Node.js</div>
+                            <div class="font-semibold text-gray-800 dark:text-white">Node.js</div>
                         </div>
-                        <div class="bg-red-100 p-4 rounded-lg text-center">
+                        <div class="bg-red-100 dark:bg-red-900/30 p-4 rounded-lg text-center transition-colors duration-300">
                             <div class="text-2xl mb-2">🅰️</div>
-                            <div class="font-semibold">Angular</div>
+                            <div class="font-semibold text-gray-800 dark:text-white">Angular</div>
                         </div>
-                        <div class="bg-yellow-100 p-4 rounded-lg text-center">
+                        <div class="bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded-lg text-center transition-colors duration-300">
                             <div class="text-2xl mb-2">🐍</div>
-                            <div class="font-semibold">Python</div>
+                            <div class="font-semibold text-gray-800 dark:text-white">Python</div>
                         </div>
-                        <div class="bg-purple-100 p-4 rounded-lg text-center">
+                        <div class="bg-purple-100 dark:bg-purple-900/30 p-4 rounded-lg text-center transition-colors duration-300">
                             <div class="text-2xl mb-2">🟣</div>
-                            <div class="font-semibold">Vue.js</div>
+                            <div class="font-semibold text-gray-800 dark:text-white">Vue.js</div>
                         </div>
-                        <div class="bg-orange-100 p-4 rounded-lg text-center">
+                        <div class="bg-orange-100 dark:bg-orange-900/30 p-4 rounded-lg text-center transition-colors duration-300">
                             <div class="text-2xl mb-2">☕</div>
-                            <div class="font-semibold">Java</div>
+                            <div class="font-semibold text-gray-800 dark:text-white">Java</div>
                         </div>
                     </div>
                 </div>
@@ -198,10 +223,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-100">
+    <section id="contact" class="py-16 bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
         <div class="container mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold mb-8">Contacto</h3>
-            <p class="text-lg text-gray-600 mb-8">¿Interesado en trabajar juntos? ¡Hablemos!</p>
+            <h3 class="text-3xl font-bold mb-8 text-gray-800 dark:text-white">Contacto</h3>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">¿Interesado en trabajar juntos? ¡Hablemos!</p>
             <div class="space-x-4">
                 <a href="mailto:diego@diegosvart.dev" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
                     📧 Email
@@ -209,7 +234,7 @@
                 <a href="https://linkedin.com/in/diegosvart" class="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition">
                     💼 LinkedIn
                 </a>
-                <a href="https://github.com/diegosvart" class="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition">
+                <a href="https://github.com/diegosvart" class="bg-gray-800 dark:bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-900 dark:hover:bg-gray-500 transition">
                     💻 GitHub
                 </a>
             </div>
@@ -217,7 +242,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 text-center">
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8 text-center transition-colors duration-300">
         <p>&copy; 2025 Mi Portafolio Full-Stack. Construido con ❤️ y desplegado en AWS.</p>
     </footer>
 
