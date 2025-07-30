@@ -12,6 +12,22 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+/* Animations */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
 /* Dark mode toggle styles */
 #darkModeToggle {
     transition: all 0.3s ease;
@@ -74,6 +90,22 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Loading state for images */
+.loading-placeholder {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 @media (max-width: 768px) {
     .text-5xl {
         font-size: 2.5rem;
@@ -113,6 +145,11 @@ body {
     
     #mobileMenu.hidden {
         animation: slideUp 0.3s ease-out;
+    }
+    
+    /* Hero section mobile adjustments */
+    .animate-bounce {
+        animation-duration: 2s;
     }
 }
 

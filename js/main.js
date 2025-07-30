@@ -183,10 +183,15 @@ function initChart() {
             }
         });
         
+        console.log('Chart initialized successfully');
+        
     } catch (error) {
         console.error('Error al crear el chart:', error);
     }
 }
+
+// Make initChart available globally for fallback loading
+window.initChart = initChart;
 
 // Smooth scrolling for navigation links
 function initSmoothScrolling() {
@@ -233,7 +238,20 @@ function initScrollAnimations() {
 document.addEventListener('DOMContentLoaded', function() {
     initDarkMode();
     initMobileMenu();
-    initChart();
     initSmoothScrolling();
     initScrollAnimations();
+    
+    // Try to initialize chart immediately
+    if (window.Chart) {
+        initChart();
+    } else {
+        // Retry chart initialization after a delay
+        setTimeout(() => {
+            if (window.Chart) {
+                initChart();
+            } else {
+                console.log('Chart.js not available, chart will not be displayed');
+            }
+        }, 1000);
+    }
 });
