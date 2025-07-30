@@ -3,6 +3,7 @@
 // Dark Mode Toggle
 function initDarkMode() {
     const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeToggleMobile = document.getElementById('darkModeToggleMobile');
     
     // Check for saved dark mode preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
@@ -12,7 +13,8 @@ function initDarkMode() {
         document.documentElement.classList.add('dark');
     }
     
-    darkModeToggle.addEventListener('click', () => {
+    // Function to toggle dark mode
+    function toggleDarkMode() {
         document.documentElement.classList.toggle('dark');
         
         // Save preference
@@ -24,7 +26,35 @@ function initDarkMode() {
         
         // Update chart colors if needed
         updateChartColors();
-    });
+    }
+    
+    // Add event listeners to both buttons
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+    }
+    if (darkModeToggleMobile) {
+        darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+    }
+}
+
+// Mobile menu toggle
+function initMobileMenu() {
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
 }
 
 // Update chart colors based on theme
@@ -202,6 +232,7 @@ function initScrollAnimations() {
 // Initialize everything when DOM loads
 document.addEventListener('DOMContentLoaded', function() {
     initDarkMode();
+    initMobileMenu();
     initChart();
     initSmoothScrolling();
     initScrollAnimations();
