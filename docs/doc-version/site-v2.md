@@ -1,6 +1,6 @@
 ## Evaluación actual del sitio
 
-Tu portafolio exhibe con claridad tus especialidades y tecnologías:
+Tu portafolio exhibe con claridad tus git especialidades y tecnologías:
 
 - React, Node.js, Python, cloud, stacks modernos (React+TS+Node+Golang; Angular+FastAPI; Vue+Java; etc.)
 - Proyectos reales y stack tecnológico
@@ -13,22 +13,31 @@ Tu portafolio exhibe con claridad tus especialidades y tecnologías:
 - Contacto: básico, sin llamado a la acción destacado o facilidades de seguimiento.
 - Personalidad corporativa: se puede mejorar con branding, narrativa, estructura visual, testimonios, credenciales.
 
----
 
-## Plan de trabajo propuesto
+#### Definir o actualizar branding corporativo
 
-Se sugiere una estructura por fases, cada una con tareas concretas:
+- **Paleta de colores profesional:**
+	- #EDEDED (fondo claro principal)
+	- #97CFFE (acento suave)
+	- #1E9AFF (acento principal)
+	- #9DA297 (gris neutro)
+	- #020204 (fondo oscuro para dark theme)
+- **Tipografía:** Roboto
+- **Logo:** ![devmc logo](../../assets/img/devmc-logo.png)
+- **Estilo visual:** corporativo
+	- Light theme: fondo color #EDEDED
+	- Dark theme: fondo color #020204
 
-### Fase 1: Diagnóstico y estrategia (1–2 días)
 
-- Definir o actualizar branding corporativo:
-	- Paleta de colores profesional, tipografía, logo, estilo visual (tono de voz)
-	- Alinear con el público meta o industria objetivo (empresas, consultoría, equipos de producto, etc.)
-- Benchmark competitivo:
-	- Investigar sitios de portafolios ejecutivos o de empresas de desarrollo para inspirar diseño y estructura
-- Clarificar objetivos del sitio:
-	- ¿Captar clientes directos, empleadores corporativos, partners tecnológicos, conferencias, networking?
-	- Definir público objetivo y adaptar contenido/mensajes
+**Público objetivo:**
+- Headhunters
+- Empleadores corporativos
+- Partners tecnológicos
+- Posibles clientes de consultoría
+
+**Intención del sitio:**
+- Captar clientes o interesados en servicios profesionales de desarrollo, consultoría y colaboración tecnológica.
+- Presentar una imagen profesional y confiable para atraer oportunidades laborales y de negocio.
 
 ### Fase 2: Arquitectura de contenido y UX (2–3 días)
 
