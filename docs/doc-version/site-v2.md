@@ -40,9 +40,14 @@ Tu portafolio exhibe con claridad tus git especialidades y tecnologías:
 - Presentar una imagen profesional y confiable para atraer oportunidades laborales y de negocio.
 
 ### Fase 2: Arquitectura de contenido y UX (2–3 días)
+#### Navegación y estructura mejoradas
 
-- Navegación y estructura mejoradas:
-	- Reorganizar secciones: Inicio, Sobre mí, Servicios (adicional), Proyectos destacados, Casos de éxito, Clientes/Testimonios, Contacto
+- **Inicio:** sólo permite llegar al top del sitio.
+- **Sobre mí:** incluirá un nuevo texto de "mensaje de valor" que demuestre un perfil de ingeniero informático integral, consultor y corporativo, capaz de desempeñarse en cada área de la ingeniería del software.
+- **Servicios:** tendrá un carrusel o componente similar que describa los servicios y habilidades ofrecidas.
+- **Proyectos destacados:** a la espera de selección de repositorios y su descripción.
+- **Testimonios:** incluirá texto sobre un testimonio en LinkedIn.
+- **Contacto:** formulario de contacto, enlaces a LinkedIn y GitHub.
 - Home/landing impactante:
 	- Breve mensaje de valor (ejemplo: “Desarrollador Full-Stack para soluciones escalables”)
 	- Imagen o ilustración profesional, llamado a la acción claro (“Hablemos”, “Ver proyectos”)
@@ -50,13 +55,13 @@ Tu portafolio exhibe con claridad tus git especialidades y tecnologías:
 	- Presentación profesional: trayectoria, valores, metodología, diferenciadores, certificaciones o formación destacada
 	- Foto profesional y tono más corporativo
 
-### Fase 3: Revisar y pulir Proyectos (3–4 días)
+### Fase 3: Revisar y pulir Proyectos (3–4 días) Sin prioridad
 
 - Seleccionar y detallar proyectos clave:
 	- Reemplazar “En Desarrollo” o “Próximamente” con casos concluidos o proyectos piloto sólidos
 	- Para cada proyecto: descripción, rol, desafíos, soluciones, resultados (métricas si aplican), tecnologías usadas, enlace a demo/código
 
-### Diseño visual y consistencia
+### Diseño visual y consistencia. Máxima prioridad.
 
 - Layout uniforme (tarjetas), imágenes o maquetas, paleta, estilo de botones
 - Incluir testimonios o validaciones:
@@ -75,7 +80,7 @@ Tu portafolio exhibe con claridad tus git especialidades y tecnologías:
 	- Revisar tiempos de carga, imágenes optimizadas, SEO básico (meta descripciones, títulos, alt, Open Graph)
 	- Responsividad móvil impecable
 - Optimización SEO y metadata:
-	- Títulos bien pensados (ejemplo: “Desarrollador Full-Stack | Nombre”)
+	- Títulos bien pensados (ejemplo: “Software Engineer | Diego Morales)
 	- Meta descriptions atractivas
 
 ### Fase 5: Revisión final y lanzamiento (1 día)
